@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<form action="index_submit" method="get" accept-charset="utf-8">
+		
+
+		<table>
+
+			<tr>
+				<td colspan="2">EMAIL</td>
+			</tr>
+
+
+			{%for i in email%}
+            {%%}
+
+						
+
+			<tr>
+				<td colspan="" rowspan="" headers="">
+					Nombre: 
+				</td>
+				<td colspan="" rowspan="" headers="">
+					{{i.pk}} {{i.email_content.issue}}
+				</td>
+			</tr>
+			<tr>
+				<td colspan="" rowspan="" headers="">
+					Asunto: 
+				</td>
+				<td colspan="" rowspan="" headers="">
+					{{i.pk}} {{i.email_content.issue}}
+				</td>
+			</tr>
+			<tr>
+				<td colspan="" rowspan="" headers="">
+					Mensaje:	
+				</td>
+				<td colspan="" rowspan="" headers="">
+					{{i.pk}} {{i.email_content.issue}}
+				</td>
+			</tr>
+			
+
+            {%endfor%}
+
+
+		</table>			
+	</form>	
+</body>
+</html>

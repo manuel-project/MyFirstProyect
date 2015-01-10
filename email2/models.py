@@ -23,9 +23,8 @@ class Email(models.Model):
     important = models.BooleanField(default=True)
     status = models.BooleanField(default=True)
     date = models.DateField()
-    
     def __unicode__(self):
-        return important+" "+status+" "+date
+        return self.user.first_name+" "+self.email_content.message
 
 class EmailAttach(models.Model):
     email_content = models.ForeignKey(EmailContent)
@@ -33,5 +32,5 @@ class EmailAttach(models.Model):
     type_archive = models.CharField(max_length=8)
     url = models.CharField(max_length=100)
     def __unicode__(self):
-        return patch+" "+type_archive+" "+url
+        return self.patch+" "+self.type_archive+" "+self.url
 
