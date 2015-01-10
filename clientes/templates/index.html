@@ -8,19 +8,66 @@
 </head>
 <body>
 	<form action="index_submit" method="get" accept-charset="utf-8">
-		<tr>
-			<td colspan="" rowspan="" headers="">
-				pais	
-			</td>
-			<td colspan="" rowspan="" headers="">
-				<select name="" >
-					<option value="">value</option>
-					{%for i in country%}
-						<option value="{{i.pk}}">{{i.name}}</option>
-					{%endfor%}
-				</select>
-			</td>
-		</tr> 			
+		<table>
+			<tr>
+				<td colspan="2">FORMULARIO</td>
+			</tr>
+			<tr>
+				<td colspan="" rowspan="" headers="">
+					Teléfono: 
+				</td>
+				<td colspan="" rowspan="" headers="">
+					<input type="text" name="nombre">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="" rowspan="" headers="">
+					Dirección: 
+				</td>
+				<td colspan="" rowspan="" headers="">
+					<input type="text" name="nombre">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="" rowspan="" headers="">
+					Pais:	
+				</td>
+				<td colspan="" rowspan="" headers="">
+					<select name="" >
+						<option value="">value</option>
+						{%for i in country%}
+							<option value="{{i.pk}}">{{i.name}}</option>
+						{%endfor%}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="" rowspan="" headers="">
+					Ciudad:	
+				</td>
+				<td colspan="" rowspan="" headers="">
+					<select name="" >
+						<option value="">value</option>
+						{%for i in city%}
+							<option value="{{i.pk}}">{{i.name}}</option>
+						{%endfor%}
+					</select>
+				</td>
+			</tr> 
+			<tr>
+				<td colspan="" rowspan="" headers="">
+					Estado:	
+				</td>
+				<td colspan="" rowspan="" headers="">
+					<select name="" >
+						<option value="">value</option>
+						{%for i in state%}
+							<option value="{{i.pk}}">{{i.name}}</option>
+						{%endfor%}
+					</select>
+				</td>
+			</tr> 
+		</table>			
 	</form>	
 </body>
 </html>

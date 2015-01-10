@@ -6,5 +6,5 @@ urlpatterns = patterns('',
     # url(r'^$', 'miprmerproyeto.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^clientes$', "clientes.views.C_Registrar_View", name = "Clientes"),
+    url(r'^clientes/$', "clientes.views.C_Registrar_View", name = "Clientes"),
 )

@@ -7,5 +7,6 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url('^clientes/', include("clientes.urls")),
+    url('^clientes/', include("clientes.urls")), # clientes/ Es el nombre que quiero para la url.... clientes.urls Es el nombre de la app
+    url('^email/', include("email2.urls")),
 )

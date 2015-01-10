@@ -8,22 +8,23 @@ class EmailFolder(models.Model):
     def __unicode__(self):
         return self.name
 
-class Email(models.Model):
+class EmailContent(models.Model):
+    user = models.ForeignKey(User)
+    reference = models.IntegerField(max_length=10)
+    issue = models.CharField(max_length=250)
+    message = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return "%s (%s)"%(self.issue,self.message)
+
+class EmailOut(models.Model):
     email_folder = models.ForeignKey(EmailFolder)
     email_content = models.ForeignKey(EmailContent)
     user = models.ForeignKey(User, null=True)
-    important = models.BooleanField()
-    status = models.BooleanField()
-    date = models.DateField()
-    
+    important = models.BooleanField(default=True)
+    status = models.BooleanField(default=True)
+    date = models.DateField(default=True)
     def __unicode__(self):
-        return 
-
-class EmailContent(models.Model):
-    issue = models.CharField(max_length=250)
-    message = models.ForeignKey(State)
-    def __unicode__(self):
-        return "%s (%s)"%(self.name,self.state)
+        return important+" "+status+" "+date
 
 class EmailAttach(models.Model):
     email_content = models.ForeignKey(EmailContent)
