@@ -20,10 +20,12 @@ class Email(models.Model):
         return 
 
 class EmailContent(models.Model):
+    reference = models.ForeignKey(reference, null=True)
+    user = models.ForeignKey(User, null=True)
     issue = models.CharField(max_length=250)
-    message = models.ForeignKey(State)
+    message = models.CharField(max_length=500)
     def __unicode__(self):
-        return "%s (%s)"%(self.name,self.state)
+        return "%s (%s)"%(self.user.first_name,self.message)
 
 class EmailAttach(models.Model):
     email_content = models.ForeignKey(EmailContent)
